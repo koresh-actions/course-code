@@ -23,7 +23,7 @@ jobs:
             - name: Display working direcory & list files
               run: |
                 pwd
-                ls -a
+                Get-ChildItem -Hidden .
                 echo $GITHUB_SHA
                 echo $GITHUB_REPOSITORY
                 echo $GITHUB_WORKSPACE
