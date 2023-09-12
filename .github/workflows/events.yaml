@@ -1,6 +1,14 @@
 name: Repository events
 
-on: [push, pull_request, issues]
+on: 
+    push:
+      branches:
+        - main
+    pull_request:
+      branches:
+        - main
+    issues:
+
 
 jobs:
   checkout-test:
@@ -9,4 +17,4 @@ jobs:
     - run: |
         echo $GITHUB_SHA
         echo $GITHUB_REF
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
