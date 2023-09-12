@@ -12,9 +12,13 @@ jobs:
               run: ls -a
 
 
-            - name: checkout after
+            - name: checkout 
               uses: actions/checkout@v4
+            
+            - name: list after
               run: ls -a
+              
+             
 
               
 
