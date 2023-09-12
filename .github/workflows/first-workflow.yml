@@ -32,8 +32,8 @@ jobs:
     - name: echo a string
       run: write-output "windwos string"
     - name: error step
-      run: doestexist
-      
+      run: doestexistss
+
 
 
 
