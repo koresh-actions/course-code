@@ -4,6 +4,23 @@ on: [push]
 
 
 jobs:
+
+    checkout-action:
+        runs-on: ubuntu-latest
+        steps:
+            - name: list all files before
+              run: ls -a
+
+
+            - name: checkout after
+              uses: actions/checkout@v4
+              run: ls -a
+
+              
+
+
+
+
     checkout-and-display-files:
         runs-on: ubuntu-latest
         steps:
@@ -19,4 +36,3 @@ jobs:
                 git checkout main
             - name: list files after
               run: ls -a
-
