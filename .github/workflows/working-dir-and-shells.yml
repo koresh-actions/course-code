@@ -2,6 +2,10 @@ name: working dir & shells
 
 on: [push]
 
+defaults:
+    run:
+      shell: bash
+
 
 jobs:
     display-wd-info:
@@ -14,16 +18,30 @@ jobs:
                 echo $GITHUB_SHA
                 echo $GITHUB_REPOSITORY
                 echo $GITHUB_WORKSPACE
-
+            - name: change wd
+              working-directory: /home/runner
+              run: pwd
+              
+                  
 
 
     display-wd-info-windows:
         runs-on: windows-latest
+        defaults:
+            run:
+              shell: pwsh
+
         steps:
             - name: Display working direcory & list files
               run: |
-                pwd
+                get-location
                 Get-ChildItem -Hidden .
-                echo $GITHUB_SHA
-                echo $GITHUB_REPOSITORY
-                echo $GITHUB_WORKSPACE
+                echo $env:GITHUB_SHA
+                echo $env:GITHUB_REPOSITORY
+                echo $env:GITHUB_WORKSPACE
+            - name: python shell
+              shell: python
+              run: |
+                import platform
+                print(platform.processor())
+
