@@ -2,17 +2,15 @@ name: simple action
 
 on: [push]
 
-
 jobs:
-    simple-action:
-        - name: Simple js action
-          id: greet
-          uses: actions/hello-world-javascript-action@v1
-          with:
-            who-to-greet: 'lidor'
+  simple-action:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Simple js action
+      id: greet
+      uses: actions/hello-world-javascript-action@v1
+      with:
+        who-to-greet: 'lidor'
 
-        - name: log greeting time
-          run: echo "${{steps.greet.outputs.time}}"
-
-
-          
+    - name: log greeting time
+      run: echo "${{steps.greet.outputs.time}}"
