@@ -1,13 +1,17 @@
 name: Repository events
 
 on: 
-    push:
-      branches:
-        - main
-    pull_request:
-      branches:
-        - main
-    issues:
+  push:
+
+  pull_request:
+    types: [opened , assigned , reopened,synchronize ]
+
+  issues:
+    types: [opened]
+
+
+
+
 
 
 jobs:
